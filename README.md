@@ -10,13 +10,13 @@ WaybackMachine's OSINT tool for url recon using Python
 ```bash
 $ git clone https://github.com/atraxsrc/wayback-Urls.git
 
-$ cd waybackurls
+$ cd wayback-Urls 
 
 $ python3 waybackurls.py
 ```
 ## Usage:
 ```bash
-./waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o output]
+python3 waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o output]
 ```
 Can be use with other tools for more efficient results
 
