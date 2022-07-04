@@ -7,7 +7,7 @@ WaybackMachine's OSINT tool for url recon using Python
 - selenium
 
 ## Install:
-```bash
+```git
 $ git clone https://github.com/atraxsrc/wayback-Urls.git
 
 $ cd wayback-Urls 
@@ -15,12 +15,12 @@ $ cd wayback-Urls
 $ python3 waybackurls.py
 ```
 ## Usage:
-```bash
+```python
 python3 waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o output]
 ```
 
 ## options:
-```md
+```
   -h,         show this help message and exit
   
   -d          target domain (exp: target.com)
