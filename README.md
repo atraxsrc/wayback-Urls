@@ -18,24 +18,22 @@ $ python3 waybackurls.py
 ```bash
 python3 waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o output]
 ```
-Can be use with other tools for more efficient results
-
 
 ## options:
-```bash
-  -h, --help  show this help message and exit
+```md
+  -h,         show this help message and exit
   
   -d          target domain (exp: target.com)
   
-  -k          search for a specific extension or keyword (js, xml, json, pdf... or admin, login, dashboard...)
+  -k          search a specific extension or keyword (js, xml, json, pdf, css... or admin, login...)
   
-  -l          limit (number of links you want)
+  -l          limit (number of links)
   
-  -s          take screenshot of each url found
+  -s          screenshot of each url found
   
-  -r          delay between two screenshots
+  -r          delay between screenshots
   
-  -o          Output file name
+  -o          output file to your choosen path
 ```
   
 
