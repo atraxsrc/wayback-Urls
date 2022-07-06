@@ -31,11 +31,11 @@ class bcolors:
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domain", help="target domain (exp: target.com)", type=str)
-parser.add_argument("-k", "--keyword", help="search for a specific extension or keyword (js, xml, json, pdf... or admin, login, dashboard...)", type=str)
-parser.add_argument("-l", "--limit", help="limit (number of links you want)", type=str)
-parser.add_argument("-s", "--screenshot", help="take screenshot of each url", action="store_true")
-parser.add_argument("-r", "--rate-limit", help="time between two screens", type=float)
-parser.add_argument("-o", "--output", help="Output file name", type=str)
+parser.add_argument("-k", "--keyword", help="search a specific extension or keyword (js, xml, json, pdf, css... or admin, login...)", type=str)
+parser.add_argument("-l", "--limit", help="limit (number of links)", type=str)
+parser.add_argument("-s", "--screenshot", help="screenshot of each url found", action="store_true")
+parser.add_argument("-r", "--rate-limit", help="delay between screenshots", type=float)
+parser.add_argument("-o", "--output", help="output file to your choosen path", type=str)
 args = parser.parse_args()
 	
 def screenshot(urls):
