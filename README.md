@@ -10,6 +10,7 @@ WaybackMachine's OSINT tool for url recon using Python
 git clone https://github.com/atraxsrc/wayback-Urls.git
 cd wayback-Urls 
 python3 waybackurls.py
+
 ```
 ## Usage:
 ```python
