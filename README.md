@@ -34,7 +34,7 @@ python3 waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o 
 
 - Retrieve URLs for a specific domain:
 ```python
-  python3 waybackurls.py -d example.com
+python3 waybackurls.py -d example.com
 ```
 - Retrieve URLs and take screenshots with a 5-second delay:
 ```python
