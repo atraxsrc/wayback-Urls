@@ -56,5 +56,5 @@ By default, the retrieved URLs will be printed to the console. If the -o option 
 ## Contributing
 Contributions to Wayback-Urls are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License.
