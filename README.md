@@ -1,60 +1,89 @@
 # Wayback-Urls
 
-Wayback-Urls is an OSINT (Open Source Intelligence) tool leveraging the Wayback Machine for URL reconnaissance. It's built using Python and allows users to retrieve historical URLs associated with a specific domain. The tool also offers functionalities such as keyword filtering, limiting the number of results, taking screenshots of retrieved URLs, and exporting results.
+Wayback-Urls is an OSINT (Open Source Intelligence) tool leveraging the Wayback Machine for URL reconnaissance. Built with Python, it retrieves historical URLs associated with a target domain with support for keyword filtering, result limiting, screenshots, and file export.
 
 ## Prerequisites
-- Python 3
-- requests
-- selenium
-- Firefox WebDriver (for screenshot functionality)
+
+- Python 3.7+
+- [requests](https://pypi.org/project/requests/)
+- [selenium](https://pypi.org/project/selenium/)
+- [Firefox](https://www.mozilla.org/firefox/) + [geckodriver](https://github.com/mozilla/geckodriver/releases) *(only required for screenshot functionality)*
 
 ## Installation
-
 ```bash
 git clone https://github.com/atraxsrc/wayback-Urls.git
 cd wayback-Urls
 pip install -r requirements.txt
 ```
-##Usage
-```python
-python3 waybackurls.py [-h] -d target.xyz [-k keyword] [-l limit] [-s] [-r] [-o output]
+
+> For screenshots, make sure `geckodriver` is installed and available in your `$PATH`.
+> On Ubuntu/Debian: `sudo apt install firefox-geckodriver`
+> On Arch: `sudo pacman -S geckodriver`
+> Or download manually from [github.com/mozilla/geckodriver](https://github.com/mozilla/geckodriver/releases)
+
+## Usage
+```bash
+python3 waybackurls.py [-h] -d target.com [-k keyword] [-l limit] [-s] [-r seconds] [-o output]
 ```
-##Options
-```
-  -h          show this help message
-  -d          target domain (exp: target.com)
-  -k          search a specific extension or keyword (js, xml, json, pdf, css... or admin, login...)
-  -l          limit (number of links)
-  -s          screenshot of each url found
-  -r          delay between screenshots
-  -o          output file to your chosen path
-```
+
+## Options
+
+| Flag | Long form | Description | Default |
+|------|-----------|-------------|---------|
+| `-h` | `--help` | Show help message | |
+| `-d` | `--domain` | Target domain (e.g., `target.com`) | *required* |
+| `-k` | `--keyword` | Filter by extension or keyword (e.g., `js`, `pdf`, `admin`, `login`) | |
+| `-l` | `--limit` | Maximum number of URLs to return | |
+| `-s` | `--screenshot` | Take a screenshot of each URL found | |
+| `-r` | `--rate-limit` | Delay in seconds between screenshots | `1` |
+| `-o` | `--output` | Save results to a file at the specified path | |
+
 ## Examples
 
-- Retrieve URLs for a specific domain:
-```python
+Retrieve all archived URLs for a domain:
+```bash
 python3 waybackurls.py -d example.com
 ```
-- Retrieve URLs and take screenshots with a 5-second delay:
-```python
-python3 waybackurls.py -d example.com -s -r 5
+
+Filter for a specific file extension:
+```bash
+python3 waybackurls.py -d example.com -k js
 ```
-- Filter results for a specific keyword and limit the output:
-```python
+
+Filter by keyword and limit results:
+```bash
 python3 waybackurls.py -d example.com -k login -l 100
 ```
-- Retrieve URLs, take screenshots, and save the output to a file:
-```python
-python3 waybackurls.py -d example.com -s -o urls.txt
+
+Take screenshots with a 5-second delay between each:
+```bash
+python3 waybackurls.py -d example.com -s -r 5
 ```
+
+Retrieve URLs and save to a file:
+```bash
+python3 waybackurls.py -d example.com -o urls.txt
+```
+
+Retrieve URLs, take screenshots, and save output:
+```bash
+python3 waybackurls.py -d example.com -s -r 2 -o urls.txt
+```
+
 ## Screenshots
-When the -s option is used, screenshots of the retrieved URLs will be taken and saved in the screens directory within the project folder. The screenshots will be named screen-<number>.png, where <number> represents the sequential number of the screenshot.
+
+When the `-s` flag is used, screenshots are saved to the `screens/` directory inside the project folder (created automatically if it doesn't exist). Files are named `screen-<number>.png` sequentially.
 
 ## Output
-By default, the retrieved URLs will be printed to the console. If the -o option is used, the URLs will be saved to the specified output file.
+
+By default, retrieved URLs are printed to the console with a count summary. Use `-o` to save results to a file instead.
+
+If no URLs are found for the given domain or keyword, the tool will display a warning and exit cleanly.
 
 ## Contributing
-Contributions to Wayback-Urls are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+Contributions are welcome! If you have ideas, improvements, or bug fixes, please open an issue or submit a pull request.
 
 ## License
+
 This project is licensed under the MIT License.
