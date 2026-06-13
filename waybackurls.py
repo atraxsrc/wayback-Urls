@@ -33,6 +33,13 @@ WAYBACK_API_URL = (
 )
 SCREENSHOT_FOLDER = "screens"
 
+# Some Internet Archive endpoints reset connections that use the default
+# python-requests User-Agent, so send a browser-like one.
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) "
+                  "Gecko/20100101 Firefox/128.0"
+}
+
 
 def setup_arg_parser():
     parser = argparse.ArgumentParser(
@@ -93,7 +100,7 @@ def fetch_urls(domain, keyword=None, limit=None):
     print(TerminalColors.INFO + f"[*] Querying: {url}" + TerminalColors.RESET)
 
     try:
-        response = requests.get(url, timeout=30)
+        response = requests.get(url, headers=HEADERS, timeout=30)
         response.raise_for_status()
     except requests.exceptions.Timeout:
         print(TerminalColors.FAIL + "[!] Request timed out. The Wayback Machine may be slow — try again." + TerminalColors.RESET)
