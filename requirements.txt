@@ -1,0 +1,5 @@
+# Core dependency (always required)
+requests>=2.25.0
+
+# Optional — only needed for the --screenshot (-s) feature
+selenium>=4.0.0
