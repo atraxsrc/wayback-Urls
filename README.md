@@ -1,3 +1,5 @@
+
+
 # Wayback-Urls
 
 ![Python](https://img.shields.io/badge/python-3.7%2B-blue)
@@ -54,7 +56,7 @@ python3 waybackurls.py [-h] -d target.com [-k keyword] [-l limit] [-s] [-r secon
 |------|----------------|----------------------------------------------------------|------------|
 | `-h` | `--help`       | Show the help message and exit                           |            |
 | `-d` | `--domain`     | Target domain (e.g., `target.com`)                       | *required* |
-| `-k` | `--keyword`    | Filter by extension or keyword (e.g., `js`, `pdf`, `admin`, `login`) |            |
+| `-k` | `--keyword`    | Filter by file extension (e.g., `js`, `pdf`, `php`, `svg`) |            |
 | `-l` | `--limit`      | Maximum number of URLs to return                         |            |
 | `-s` | `--screenshot` | Take a screenshot of each URL found                      |            |
 | `-r` | `--rate-limit` | Delay in seconds between screenshots                     | `1`        |
